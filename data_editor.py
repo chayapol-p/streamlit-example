@@ -23,8 +23,14 @@ def data_editor():
     )
 
     if town:
-        df = pd.DataFrame({'Factoryname': ['A', 'B'], 'Electrical consuming(kW)': [26, 70]})
+        from streamlit_gsheets import GSheetsConnection
+
+        # Create a connection object.
+        conn = st.connection("gsheets", type=GSheetsConnection)
+
+        df = conn.read()
+        # df = pd.DataFrame({'Factoryname': ['A', 'B'], 'Electrical consuming(kW)': [26, 70]})
         edited_df = st.data_editor(df, num_rows="dynamic")
-        max_elec_consm = edited_df.loc[edited_df["Electrical consuming(kW)"].idxmax()]["Factoryname"]
-        st.markdown(f"The most Factory consumed is **{max_elec_consm}** 🎈")
+        # max_elec_consm = edited_df.loc[edited_df["Electrical consuming(kW)"].idxmax()]["Factoryname"]
+        # st.markdown(f"The most Factory consumed is **{max_elec_consm}** 🎈")
 
