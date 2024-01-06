@@ -28,7 +28,7 @@ def data_editor():
         # Create a connection object.
         conn = st.connection("gsheets", type=GSheetsConnection)
 
-        df = conn.read(usecols=[0, 1, 2], nrows=3)
+        df = conn.read(usecols=[0, 1, 2])
         # df = pd.DataFrame({'Factoryname': ['A', 'B'], 'Electrical consuming(kW)': [26, 70]})
         edited_df = st.data_editor(df, num_rows="dynamic")
         # max_elec_consm = edited_df.loc[edited_df["Electrical consuming(kW)"].idxmax()]["Factoryname"]
