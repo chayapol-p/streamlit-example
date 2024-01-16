@@ -21,9 +21,6 @@ page_names_to_funcs = {
 }
 
 
-with open('./credentials/authentication.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-
 authenticator = stauth.Authenticate(
     st.secrets.authentiction['credentials'],
     st.secrets.authentiction.cookie['name'],
