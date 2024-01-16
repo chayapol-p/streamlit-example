@@ -22,7 +22,7 @@ page_names_to_funcs = {
 
 
 authenticator = stauth.Authenticate(
-    st.secrets.authentication['credentials'],
+   dict(st.secrets.authentication['credentials']),
     st.secrets.authentication.cookie['name'],
     st.secrets.authentication.cookie['key'],
     st.secrets.authentication.cookie['expiry_days']
