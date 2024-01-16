@@ -4,3 +4,5 @@ streamlit
 plotly
 openpyxl
 st-gsheets-connection
+streamlit-authenticator
+streamlit-option-menu
