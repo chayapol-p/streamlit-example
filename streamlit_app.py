@@ -25,11 +25,10 @@ with open('./credentials/authentication.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
+    st.secrets.authentiction['credentials'],
+    st.secrets.authentiction.cookie['name'],
+    st.secrets.authentiction.cookie['key'],
+    st.secrets.authentiction.cookie['expiry_days']
 )
 
 
